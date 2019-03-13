@@ -1,0 +1,12 @@
+%h1 Incidències
+
+%table.table
+  %thead
+    %tr
+      %th Codi
+      %th Estat
+  %tbody
+  - for incidencia <- @incidencies do
+    %tr
+      %td= link(incidencia.codinc, to: LhWeb.Router.Helpers.incidencia_path(@conn, :show, incidencia.codinc))
+      %td= incidencia.estat

@@ -32,6 +32,8 @@ defmodule Lh.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:phoenix_haml, "~> 0.2"},
+      {:tesla, "~> 1.2"},
       {:phoenix, "~> 1.4.0"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_html, "~> 2.11"},

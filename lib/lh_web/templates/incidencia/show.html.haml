@@ -1,0 +1,45 @@
+%h1 Incidencia
+%table.table
+  %thead
+    %tr
+      %th Codi
+      %th Data Creació
+      %th Data Inici
+      %th Data Fi
+      %th Comentari
+      %th Estat
+      %th Imatges
+  %tbody
+    %tr
+      %td= @incidencia.codinc
+      %td= @incidencia.dtcreacio
+      %td= @incidencia.dtinici
+      %td= @incidencia.dtfi
+      %td= @incidencia.comentari
+      %td= @incidencia.estat
+      %td
+
+%h2 Actuacions
+
+%table.table
+  %thead
+    %tr
+      %th Ordre
+      %th Data Fet
+      %th Estat
+      %th Comentari
+  %tbody
+  - for actuacio <- @incidencia.actuacions do
+    %tr
+      %td= actuacio.ord
+      %td= actuacio.dtfet
+      %td= actuacio.estat
+      %td= actuacio.comen
+
+%p= @incidencia.descripcio
+
+- for doc <- @incidencia.ldocsini do
+  = link(img_tag(doc.link, clas: "img-thumbnail float-left", height: "250px"), to: doc.link, target: "_blank")
+
+%p= link("« Incidències", to: LhWeb.Router.Helpers.incidencia_path(@conn, :index))
+

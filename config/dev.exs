@@ -52,7 +52,7 @@ config :lh, LhWeb.Endpoint,
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
       ~r{lib/lh_web/views/.*(ex)$},
-      ~r{lib/lh_web/templates/.*(eex)$}
+      ~r{lib/lh_web/templates/.*(eex|haml)$}
     ]
   ]
 
@@ -65,3 +65,5 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+import_config "dev.secret.exs"
