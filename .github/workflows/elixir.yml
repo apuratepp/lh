@@ -12,6 +12,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Set up config files
+      run: mv config/dev.secret.exs.sample config/dev.secret.exs
     - name: Install Dependencies
       run: |
         mix local.rebar --force
